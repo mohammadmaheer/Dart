@@ -1,174 +1,184 @@
 import 'dart:io';
 
 void main() {
-  print("Unit Converter App");
-  print(
-      "1. Length Conversion\n2. Temperature conversion\n3. Area Conversion\n4. Weight Conversion\n5. Time conversion");
-  stdout.write("Please Select any one option: ");
-  int option = int.parse(stdin.readLineSync()!);
+  var cond = 1;
+  do {
+    print("Unit Converter App");
 
-  if (option == 1) {
-    double length = 0.0;
-    print("1. Meter to kilometers");
-    print("2. Kilometer to Meters");
-    print("3. Feet to Inches");
-    print("4. Inches to Feet");
-    print("5. Centimeter to Meter");
-    print("6. Meter to Centimeter");
-    option = int.parse(stdin.readLineSync()!);
+    print(
+        "1. Length Conversion\n2. Temperature conversion\n3. Area Conversion\n4. Weight Conversion\n5. Time conversion");
+    stdout.write("Please Select any one option: ");
+    int option = int.parse(stdin.readLineSync()!);
+
     if (option == 1) {
-      stdout.write("Enter length in Meters: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToKilometers(length)}");
-    }
-    if (option == 2) {
-      stdout.write("Enter length in Kilometers: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertKilometersToMeters(length)}");
-    }
-    if (option == 3) {
-      stdout.write("Enter length in Feet: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertFeetToInches(length)}");
-    }
-    if (option == 4) {
-      stdout.write("Enter length in Inches: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertInchesToFeet(length)}");
-    }
+      double length = 0.0;
+      print("1. Meter to kilometers");
+      print("2. Kilometer to Meters");
+      print("3. Feet to Inches");
+      print("4. Inches to Feet");
+      print("5. Centimeter to Meter");
+      print("6. Meter to Centimeter");
+      option = int.parse(stdin.readLineSync()!);
+      if (option == 1) {
+        stdout.write("Enter length in Meters: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in Kilometers is: ${convertMetersToKilometers(length)}");
+      }
+      if (option == 2) {
+        stdout.write("Enter length in Kilometers: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in meters is: ${convertKilometersToMeters(length)}");
+      }
+      if (option == 3) {
+        stdout.write("Enter length in Feet: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in inches is: ${convertFeetToInches(length)}");
+      }
+      if (option == 4) {
+        stdout.write("Enter length in Inches: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in feet is: ${convertInchesToFeet(length)}");
+      }
 
-    if (option == 5) {
-      stdout.write("Enter length in Centimeter: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertCentimetersToMeters(length)}");
-    }
+      if (option == 5) {
+        stdout.write("Enter length in Centimeter: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in meters is: ${convertCentimetersToMeters(length)}");
+      }
 
-    if (option == 6) {
-      stdout.write("Enter length in Meters: ");
-      length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToCentimeters(length)}");
-    }
-  } else if (option == 2) {
-    double temp = 0.0;
-    print("1. Fahrenheit to Celcius");
-    print("2. Celcius to Fahrenheit");
-
-    option = int.parse(stdin.readLineSync()!);
-    if (option == 1) {
-      stdout.write("Enter temprature in Fahrenheit: ");
-      temp = double.parse(stdin.readLineSync()!);
-      print("Temprature in Celcius is: ${convertFahrenheitToCelsius(temp)}");
-    }
-    if (option == 2) {
-      stdout.write("Enter temprature in Celcius: ");
-      temp = double.parse(stdin.readLineSync()!);
-      print("Temprature in Fahrenheit is: ${convertCelsiusToFahrenheit(temp)}");
-    }
-  } else if (option == 3) {
-    print("1. Square Miles to Square yards");
-    print("2. Square Yards to Square Miles");
-    print("3. Square Yards to Square Feet");
-    print("4. Square Feet to Square Yards");
-
-    option = int.parse(stdin.readLineSync()!);
-    if (option == 1) {
-      stdout.write("Enter length in Square Miles: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print(
-          "Length in Square yards is: ${convertSquareMilesToSquareYards(length)}");
+      if (option == 6) {
+        stdout.write("Enter length in Meters: ");
+        length = double.parse(stdin.readLineSync()!);
+        print("Length in Centimeter is: ${convertMetersToCentimeters(length)}");
+      }
     } else if (option == 2) {
-      stdout.write("Enter length in Square yards: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Square Miles is: ${convertKilometersToMeters(length)}");
+      double temp = 0.0;
+      print("1. Fahrenheit to Celcius");
+      print("2. Celcius to Fahrenheit");
+
+      option = int.parse(stdin.readLineSync()!);
+      if (option == 1) {
+        stdout.write("Enter temprature in Fahrenheit: ");
+        temp = double.parse(stdin.readLineSync()!);
+        print("Temprature in Celcius is: ${convertFahrenheitToCelsius(temp)}");
+      }
+      if (option == 2) {
+        stdout.write("Enter temprature in Celcius: ");
+        temp = double.parse(stdin.readLineSync()!);
+        print(
+            "Temprature in Fahrenheit is: ${convertCelsiusToFahrenheit(temp)}");
+      }
     } else if (option == 3) {
-      stdout.write("Enter length in Square yards: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Square feet is: ${convertFeetToInches(length)}");
+      print("1. Square Miles to Square yards");
+      print("2. Square Yards to Square Miles");
+      print("3. Square Yards to Square Feet");
+      print("4. Square Feet to Square Yards");
+
+      option = int.parse(stdin.readLineSync()!);
+      if (option == 1) {
+        stdout.write("Enter length in Square Miles: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print(
+            "Length in Square yards is: ${convertSquareMilesToSquareYards(length)}");
+      } else if (option == 2) {
+        stdout.write("Enter length in Square yards: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print(
+            "Length in Square Miles is: ${convertSquareYardsToSquareMiles(length)}");
+      } else if (option == 3) {
+        stdout.write("Enter length in Square yards: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print(
+            "Length in Square feet is: ${convertSquareYardsToSquareFeet(length)}");
+      } else if (option == 4) {
+        stdout.write("Enter length in Square feet: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print(
+            "Length in Square yards is: ${convertSquareFeetToSquareYards(length)}");
+      }
     } else if (option == 4) {
-      stdout.write("Enter length in Square feet: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Square yards is: ${convertInchesToFeet(length)}");
-    }
-  } else if (option == 4) {
-    print("1. Kg to Grams");
-    print("2. Grams to Kg");
-    print("3. Pounds to Kg");
-    print("4. Kg to Tons");
-    print("5. Tons to Kg");
-    option = int.parse(stdin.readLineSync()!);
-    if (option == 1) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToKilometers(length)}");
-    }
-    if (option == 2) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertKilometersToMeters(length)}");
-    }
-    if (option == 3) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertFeetToInches(length)}");
-    }
-    if (option == 4) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertInchesToFeet(length)}");
-    }
+      print("1. Kg to Grams");
+      print("2. Grams to Kg");
+      print("3. Pounds to Kg");
+      print("4. Kg to Tons");
+      print("5. Tons to Kg");
+      option = int.parse(stdin.readLineSync()!);
 
-    if (option == 5) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertCentimetersToMeters(length)}");
-    }
+      if (option == 1) {
+        stdout.write("Enter weight in kilograms: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print("Weight in grams is: ${convertKilogramsToGrams(length)}");
+      }
+      if (option == 2) {
+        stdout.write("Enter weight in grams: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print("Weight in kilograms is: ${convertGramsToKilograms(length)}");
+      }
+      if (option == 3) {
+        stdout.write("Enter weight in pounds: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print("Weight in kilograms is: ${convertPoundsToKilograms(length)}");
+      }
+      if (option == 4) {
+        stdout.write("Enter weight in kilograms: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print("Weight in tons is: ${convertKilogramsToTons(length)}");
+      }
 
-    if (option == 6) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToCentimeters(length)}");
-    }
-  } else if (option == 5) {
-    print("1. Seconds to Minutes");
-    print("2. Minutes to Seconds");
-    print("3. Minutes to Hours");
-    print("4. Seconds to Hours");
-    print("5. Milliseconds to Minutes");
-    print("6. Milliseconds to Hours");
-    option = int.parse(stdin.readLineSync()!);
-    if (option == 1) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToKilometers(length)}");
-    }
-    if (option == 2) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertKilometersToMeters(length)}");
-    }
-    if (option == 3) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertFeetToInches(length)}");
-    }
-    if (option == 4) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertInchesToFeet(length)}");
-    }
+      if (option == 5) {
+        stdout.write("Enter weight in tons: ");
+        double length = double.parse(stdin.readLineSync()!);
+        print("Weight in kilograms is: ${convertTonsToKilograms(length)}");
+      }
+    } else if (option == 5) {
+      print("1. Seconds to Minutes");
+      print("2. Minutes to Seconds");
+      print("3. Minutes to Hours");
+      print("4. Seconds to Hours");
+      print("5. Milliseconds to Minutes");
+      print("6. Milliseconds to Hours");
+      option = int.parse(stdin.readLineSync()!);
+      int seconds = 0;
+      double minutes = 0;
+      if (option == 1) {
+        stdout.write("Enter time in Seconds: ");
+        seconds = int.parse(stdin.readLineSync()!);
+        print("Time in Minutes is: ${convertSecondsToMinutes(seconds)}");
+      }
+      if (option == 2) {
+        stdout.write("Enter time in Minutes: ");
+        minutes = double.parse(stdin.readLineSync()!);
+        print("Time in Seconds is: ${convertMinutesToSeconds(minutes)}");
+      }
+      if (option == 3) {
+        stdout.write("Enter time in Minutes: ");
+        minutes = double.parse(stdin.readLineSync()!);
+        print("Time in hours is: ${convertMinutesToHours(minutes)}");
+      }
+      if (option == 4) {
+        stdout.write("Enter time in Seconds: ");
+        seconds = int.parse(stdin.readLineSync()!);
+        print("Time in hours is: ${convertSecondsToHours(seconds)}");
+      }
 
-    if (option == 5) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertCentimetersToMeters(length)}");
-    }
+      if (option == 5) {
+        stdout.write("Enter time in Milliseconds: ");
+        seconds = int.parse(stdin.readLineSync()!);
+        print("Time in Minutes is: ${convertMillisecondsToMinutes(seconds)}");
+      }
 
-    if (option == 6) {
-      stdout.write("Enter length in meters: ");
-      double length = double.parse(stdin.readLineSync()!);
-      print("Length in Kilometers is: ${convertMetersToCentimeters(length)}");
+      if (option == 6) {
+        stdout.write("Enter time in Milliseconds: ");
+        seconds = int.parse(stdin.readLineSync()!);
+        print("Time in hours is: ${convertMillisecondsToHours(seconds)}");
+      }
+    } else {
+      print("WRONG OPTION....!!!\nPlease select option from 1 to 5");
     }
-  }
+    print("Do you want to continue select any one option.");
+    stdout.write("Press 1 for stop and 2 for continue...: ");
+    cond = int.parse(stdin.readLineSync()!);
+  } while (cond == 2);
 }
 
 // Function to convert meters to kilometers
